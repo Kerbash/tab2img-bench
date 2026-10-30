@@ -1,0 +1,108 @@
+
+=== T2I methods, all datasets: 51 datasets, 9 methods ===
+Friedman chi2 = 70.67, p = 3.62e-12   Nemenyi CD = 1.68
+                  avg_rank  rank_diff      z      p  p_holm verdict
+method                                                             
+CorrelationBased     3.235      0.000  0.000    NaN     NaN    best
+SOM2IMG              3.539      0.304  0.560  0.575   0.575     tie
+IGTD                 4.392      1.157  2.133  0.033   0.066     tie
+DeepInsight          4.510      1.275  2.350  0.019   0.056     tie
+SnakeRandom          5.373      2.137  3.941  0.000   0.000   worse
+SOM2IMG_tuned        5.559      2.324  4.284  0.000   0.000   worse
+Random               5.980      2.745  5.062  0.000   0.000   worse
+REFINED              6.167      2.931  5.405  0.000   0.000   worse
+SuperTML             6.245      3.010  5.550  0.000   0.000   worse
+
+=== regimes split at d/N = 1.0 ===
+
+-- dN>=1: Friedman chi2=56.69 p=2.07e-09
+                  avg_rank  p_holm verdict
+method                                    
+DeepInsight          2.909     NaN    best
+SOM2IMG              3.386   0.563     tie
+CorrelationBased     4.318   0.176     tie
+REFINED              4.477   0.173     tie
+SuperTML             4.750   0.103     tie
+IGTD                 5.136   0.035   worse
+SOM2IMG_tuned        5.477   0.011   worse
+Random               7.091   0.000   worse
+SnakeRandom          7.455   0.000   worse
+
+-- dN<1: Friedman chi2=92.46 p=1.47e-16
+                  avg_rank  p_holm verdict
+method                                    
+CorrelationBased     2.414     NaN    best
+SOM2IMG              3.655   0.148     tie
+SnakeRandom          3.793   0.148     tie
+IGTD                 3.828   0.148     tie
+Random               5.138   0.001   worse
+SOM2IMG_tuned        5.621   0.000   worse
+DeepInsight          5.724   0.000   worse
+SuperTML             7.379   0.000   worse
+REFINED              7.448   0.000   worse
+
+-- cross-regime consistency (lower worst_regime = more versatile)
+                  dN>=1  dN<1  pooled  worst_regime  swing
+SOM2IMG            3.39  3.66    3.54          3.66   0.27
+CorrelationBased   4.32  2.41    3.24          4.32   1.90
+IGTD               5.14  3.83    4.39          5.14   1.31
+SOM2IMG_tuned      5.48  5.62    5.56          5.62   0.14
+DeepInsight        2.91  5.72    4.51          5.72   2.82
+Random             7.09  5.14    5.98          7.09   1.95
+SuperTML           4.75  7.38    6.25          7.38   2.63
+REFINED            4.48  7.45    6.17          7.45   2.97
+SnakeRandom        7.45  3.79    5.37          7.45   3.66
+
+-- sensitivity to the cutoff
+         n                  #1              #2                       #3                       #4
+cutoff                                                                                          
+0.5     25  DeepInsight (3.12)  SOM2IMG (3.46)  CorrelationBased (3.92)          SuperTML (4.70)
+1.0     22  DeepInsight (2.91)  SOM2IMG (3.39)  CorrelationBased (4.32)           REFINED (4.48)
+2.0     21  DeepInsight (2.67)  SOM2IMG (3.40)           REFINED (4.26)  CorrelationBased (4.29)
+4.0     10  DeepInsight (2.40)  SOM2IMG (3.55)           REFINED (3.85)          SuperTML (4.25)
+
+=== SOM2IMG vs each T2I method: Wilcoxon over datasets ===
+      a                b  mean_diff  median_diff  wins  losses      p  p_holm
+SOM2IMG         SuperTML     0.0968       0.0454    38      12 0.0000  0.0001
+SOM2IMG          REFINED     0.0618       0.0371    41       9 0.0000  0.0000
+SOM2IMG           Random     0.0751       0.0372    39      10 0.0000  0.0000
+SOM2IMG             IGTD     0.0341       0.0030    32      17 0.0109  0.0328
+SOM2IMG    SOM2IMG_tuned     0.0460       0.0295    38      10 0.0000  0.0000
+SOM2IMG      DeepInsight     0.0113       0.0082    32      19 0.0374  0.0749
+SOM2IMG CorrelationBased     0.0055      -0.0024    19      30 0.6697  0.6697
+SOM2IMG      SnakeRandom     0.0745       0.0218    33      16 0.0000  0.0001
+
+=== SOM2IMG vs X per dataset (corrected t-test p<.05 | BH-FDR) ===
+  SOM2IMG vs SuperTML                win 26 tie 23 loss  2   | FDR win 22 loss  2
+  SOM2IMG vs REFINED                 win 22 tie 28 loss  1   | FDR win 20 loss  1
+  SOM2IMG vs Random                  win 17 tie 32 loss  2   | FDR win 14 loss  1
+  SOM2IMG vs IGTD                    win  8 tie 42 loss  1   | FDR win  1 loss  0
+  SOM2IMG vs SOM2IMG_tuned           win 15 tie 35 loss  1   | FDR win  9 loss  0
+  SOM2IMG vs DeepInsight             win  9 tie 40 loss  2   | FDR win  6 loss  1
+  SOM2IMG vs CorrelationBased        win  0 tie 50 loss  1   | FDR win  0 loss  1
+  SOM2IMG vs SnakeRandom             win 13 tie 37 loss  1   | FDR win 11 loss  0
+
+=== T2I methods + tabular baselines (same folds): 51 datasets, 13 methods ===
+Friedman chi2 = 280.48, p = 5.81e-53   Nemenyi CD = 2.55
+                  avg_rank  rank_diff      z      p  p_holm verdict
+method                                                             
+HistGB               3.010      0.000  0.000    NaN     NaN    best
+RandomForest         3.206      0.196  0.254  0.799   0.876     tie
+LogReg_L1_CV         3.608      0.598  0.775  0.438   0.876     tie
+LogReg_L2            4.353      1.343  1.742  0.082   0.245     tie
+CorrelationBased     6.569      3.559  4.615  0.000   0.000   worse
+SOM2IMG              6.912      3.902  5.060  0.000   0.000   worse
+IGTD                 7.804      4.794  6.216  0.000   0.000   worse
+DeepInsight          8.137      5.127  6.649  0.000   0.000   worse
+SnakeRandom          8.843      5.833  7.564  0.000   0.000   worse
+SOM2IMG_tuned        9.088      6.078  7.882  0.000   0.000   worse
+Random               9.510      6.500  8.428  0.000   0.000   worse
+REFINED              9.873      6.863  8.899  0.000   0.000   worse
+SuperTML            10.088      7.078  9.178  0.000   0.000   worse
+
+=== SOM2IMG vs each baseline: Wilcoxon over datasets ===
+      a            b  mean_diff  median_diff  wins  losses   p  p_holm
+SOM2IMG    LogReg_L2    -0.0958      -0.0427    13      38 0.0     0.0
+SOM2IMG RandomForest    -0.1075      -0.0850     5      46 0.0     0.0
+SOM2IMG       HistGB    -0.0924      -0.0724     5      46 0.0     0.0
+SOM2IMG LogReg_L1_CV    -0.1025      -0.0494     9      42 0.0     0.0

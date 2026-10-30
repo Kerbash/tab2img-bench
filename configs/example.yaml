@@ -1,0 +1,25 @@
+# Minimal benchmark config. Run with:  python -m tab2img run configs/example.yaml
+# CSV paths are relative to this file. Each CSV: one row per sample, numeric
+# feature columns, and a label column named by `target`.
+output_dir: ../results/example
+
+protocol:
+  folds: 10        # stratified k-fold (reduced automatically if a class is smaller)
+  seed: 42
+  epochs: 30
+  cnn: simple      # simple | deep | resnet18 | linear | tiny_gap | tiny_flat
+  clip: false      # true = clip out-of-range test values instead of uint8 wrap-around
+
+methods:
+  - SOM2IMG
+  - CorrelationBased
+  - DeepInsight
+  - SnakeRandom
+  # a variant with its own parameters and label:
+  - {method: SOM2IMG, params: {assignment: hungarian, grid_mult: 2.0}, label: SOM2IMG_hungarian}
+
+baselines: [LogReg_L2, RandomForest]
+
+datasets:
+  - {name: MyData, csv: ../data/my_data.csv, target: label}
+  # - {name: Other, csv: ../data/other.csv, target: y, exclude: [DeepInsight]}

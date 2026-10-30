@@ -1,0 +1,13 @@
+# Versions used to produce the paper results (Python 3.12, Windows, CUDA 12.8).
+# For a GPU build of torch, install it first from https://pytorch.org.
+numpy==1.26.4
+pandas==2.3.0
+scipy==1.16.0
+scikit-learn==1.7.0
+MiniSom==2.3.5
+joblib==1.5.1
+torch==2.7.1
+torchvision==0.22.1
+matplotlib==3.10.3
+PyYAML==6.0.2
+pytest

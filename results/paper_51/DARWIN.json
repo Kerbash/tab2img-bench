@@ -1,0 +1,313 @@
+{
+ "dataset": "DARWIN",
+ "source": "datasets/darwin/processed.csv",
+ "n": 174,
+ "d": 450,
+ "classes": 2,
+ "folds": 10,
+ "grid": [
+  21,
+  22
+ ],
+ "protocol": {
+  "folds": 10,
+  "seed": 42,
+  "epochs": 30,
+  "batch_size": 32,
+  "cnn": "simple",
+  "quantize": true,
+  "clip": false,
+  "min_folds": 2
+ },
+ "device": "cuda",
+ "runtime_sec": 502.3,
+ "results": [
+  {
+   "method": "IGTD",
+   "f1_mean": 0.8427447853144446,
+   "f1_std": 0.09091628059001382,
+   "acc_mean": 0.8457516339869281,
+   "auc_mean": 0.9382716049382717,
+   "features_placed_mean": 450.0,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.8889,
+    0.8328,
+    0.6494,
+    0.8286,
+    0.8198,
+    1.0,
+    0.9412,
+    0.8223,
+    0.7647,
+    0.8798
+   ],
+   "kind": "t2i"
+  },
+  {
+   "method": "DeepInsight",
+   "f1_mean": 0.8028099660916996,
+   "f1_std": 0.10274917437029506,
+   "acc_mean": 0.8055555555555556,
+   "auc_mean": 0.9075617283950617,
+   "features_placed_mean": 200.5,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.775,
+    0.7214,
+    0.6,
+    0.9443,
+    0.8815,
+    0.8824,
+    0.9412,
+    0.7631,
+    0.7647,
+    0.7546
+   ],
+   "kind": "t2i"
+  },
+  {
+   "method": "CorrelationBased",
+   "f1_mean": 0.7907201213818861,
+   "f1_std": 0.06724231266700138,
+   "acc_mean": 0.7941176470588236,
+   "auc_mean": 0.8854938271604939,
+   "features_placed_mean": 450.0,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.775,
+    0.7778,
+    0.6625,
+    0.775,
+    0.8815,
+    0.8815,
+    0.8815,
+    0.7546,
+    0.7631,
+    0.7546
+   ],
+   "kind": "t2i"
+  },
+  {
+   "method": "SOM2IMG_tuned",
+   "f1_mean": 0.7903172949341679,
+   "f1_std": 0.08612321945137644,
+   "acc_mean": 0.7931372549019609,
+   "auc_mean": 0.9037037037037038,
+   "features_placed_mean": 450.0,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.8889,
+    0.6625,
+    0.7214,
+    0.8889,
+    0.9412,
+    0.7631,
+    0.8158,
+    0.7038,
+    0.7631,
+    0.7546
+   ],
+   "kind": "t2i"
+  },
+  {
+   "method": "SOM2IMG",
+   "f1_mean": 0.78828173374613,
+   "f1_std": 0.10330927643468313,
+   "acc_mean": 0.7888888888888888,
+   "auc_mean": 0.8964506172839506,
+   "features_placed_mean": 450.0,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.7778,
+    0.6099,
+    0.775,
+    0.7214,
+    0.9412,
+    0.7059,
+    0.9408,
+    0.7059,
+    0.8235,
+    0.8815
+   ],
+   "kind": "t2i"
+  },
+  {
+   "method": "SuperTML",
+   "f1_mean": 0.7660170694458619,
+   "f1_std": 0.08738988729361838,
+   "acc_mean": 0.7709150326797385,
+   "auc_mean": 0.8867283950617283,
+   "features_placed_mean": 97.2,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.775,
+    0.6667,
+    0.7214,
+    0.7778,
+    0.8223,
+    0.6843,
+    0.9412,
+    0.6319,
+    0.8198,
+    0.8198
+   ],
+   "kind": "t2i"
+  },
+  {
+   "method": "REFINED",
+   "f1_mean": 0.7569278141878761,
+   "f1_std": 0.12935667168623954,
+   "acc_mean": 0.7601307189542483,
+   "auc_mean": 0.8541666666666667,
+   "features_placed_mean": 72.2,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.8328,
+    0.6,
+    0.55,
+    0.7662,
+    1.0,
+    0.8824,
+    0.7038,
+    0.6471,
+    0.8223,
+    0.7647
+   ],
+   "kind": "t2i"
+  },
+  {
+   "method": "SnakeRandom",
+   "f1_mean": 0.6957702305397149,
+   "f1_std": 0.07211457762885745,
+   "acc_mean": 0.7133986928104574,
+   "auc_mean": 0.8719135802469136,
+   "features_placed_mean": 450.0,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.7662,
+    0.6667,
+    0.625,
+    0.6,
+    0.7546,
+    0.7631,
+    0.6843,
+    0.607,
+    0.8198,
+    0.671
+   ],
+   "kind": "t2i"
+  },
+  {
+   "method": "Random",
+   "f1_mean": 0.6842751589655615,
+   "f1_std": 0.06744053261750724,
+   "acc_mean": 0.6957516339869281,
+   "auc_mean": 0.7770061728395061,
+   "features_placed_mean": 276.0,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.7143,
+    0.6,
+    0.7778,
+    0.6,
+    0.7647,
+    0.6843,
+    0.6319,
+    0.607,
+    0.6997,
+    0.7631
+   ],
+   "kind": "t2i"
+  },
+  {
+   "method": "LogReg_L2",
+   "kind": "baseline",
+   "f1_mean": 0.8567569659442723,
+   "f1_std": 0.08472366911784725,
+   "acc_mean": null,
+   "auc_mean": null,
+   "features_placed_mean": null,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.8328,
+    0.775,
+    0.7214,
+    0.9443,
+    0.9412,
+    0.8824,
+    1.0,
+    0.8824,
+    0.7647,
+    0.8235
+   ]
+  },
+  {
+   "method": "RandomForest",
+   "kind": "baseline",
+   "f1_mean": 0.8913464420856062,
+   "f1_std": 0.08543884067599009,
+   "acc_mean": null,
+   "auc_mean": null,
+   "features_placed_mean": null,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.8889,
+    0.7143,
+    0.7778,
+    0.8875,
+    1.0,
+    0.9408,
+    1.0,
+    0.8815,
+    0.9412,
+    0.8815
+   ]
+  },
+  {
+   "method": "HistGB",
+   "kind": "baseline",
+   "f1_mean": 0.8796873925008599,
+   "f1_std": 0.09224459722984336,
+   "acc_mean": null,
+   "auc_mean": null,
+   "features_placed_mean": null,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.8328,
+    0.6625,
+    0.8328,
+    0.9443,
+    0.9412,
+    0.9408,
+    1.0,
+    0.8198,
+    0.9412,
+    0.8815
+   ]
+  },
+  {
+   "method": "LogReg_L1_CV",
+   "kind": "baseline",
+   "f1_mean": 0.8175438596491228,
+   "f1_std": 0.09515702587569304,
+   "acc_mean": null,
+   "auc_mean": null,
+   "features_placed_mean": null,
+   "features_total": 450,
+   "f1_per_fold": [
+    0.8328,
+    0.6667,
+    0.6667,
+    0.8328,
+    0.8824,
+    0.8235,
+    1.0,
+    0.8824,
+    0.7647,
+    0.8235
+   ]
+  }
+ ],
+ "note": "T2I rows from the original study run (results_final); baseline rows from results_baselines (accuracy/AUC not recorded for baselines)."
+}

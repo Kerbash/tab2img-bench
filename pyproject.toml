@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tab2img"
+version = "0.1.0"
+description = "Tabular-to-image methods (SOM2IMG and baselines), a CNN pipeline, and a benchmark with statistical analysis"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=2.0",
+    "scipy>=1.11",
+    "scikit-learn>=1.5",
+    "MiniSom>=2.3",
+    "joblib>=1.3",
+    "torch>=2.1",
+    "matplotlib>=3.7",
+    "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+resnet = ["torchvision>=0.16"]
+test = ["pytest>=7"]
+
+[project.scripts]
+tab2img = "tab2img.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

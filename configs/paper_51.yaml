@@ -1,0 +1,58 @@
+# The 51-dataset study (paper protocol). CSV paths are relative to this file;
+# put the datasets under ../data/ with the layout below (see README: Data).
+output_dir: ../results/paper_51
+protocol: {folds: 10, seed: 42, epochs: 30, cnn: simple, quantize: true, clip: false}
+methods: [SOM2IMG, SOM2IMG_tuned, Random, IGTD, DeepInsight, CorrelationBased, REFINED, SuperTML, SnakeRandom]
+baselines: [LogReg_L2, LogReg_L1_CV, RandomForest, HistGB]
+datasets:
+  - {name: Arcene, csv: ../data/datasets/arcene/processed.csv, target: target}
+  - {name: Arrhythmia, csv: ../data/datasets/arrhythmia/processed.csv, target: target}
+  - {name: BreastCancer, csv: ../data/datasets/breast_cancer_wisconsin/breast_cancer_wisconsin_processed.csv, target: Diagnosis}
+  - {name: CLLSUB, csv: ../data/datasets/cll_sub/processed.csv, target: target}
+  - {name: CNAE9, csv: ../data/datasets/cnae9/processed.csv, target: target}
+  - {name: COIL20, csv: ../data/datasets/coil20/processed.csv, target: target}
+  - {name: Carcinom, csv: ../data/datasets/carcinom/processed.csv, target: target}
+  - {name: Cardiotocography, csv: ../data/datasets/cardiotocography/processed.csv, target: target}
+  - {name: Colon, csv: ../data/datasets/colon/processed.csv, target: target}
+  - {name: DARWIN, csv: ../data/datasets/darwin/processed.csv, target: target}
+  - {name: DryBeans, csv: ../data/datasets/dry_beans/processed.csv, target: target}
+  - {name: GLI85, csv: ../data/datasets/gli85/processed.csv, target: target}
+  - {name: GasDrift, csv: ../data/datasets/gas_drift/processed.csv, target: target}
+  - {name: GermanCredit, csv: ../data/datasets/german_credit/processed.csv, target: target}
+  - {name: Glioma, csv: ../data/datasets/glioma/processed.csv, target: target}
+  - {name: HAR, csv: ../data/datasets/har/processed.csv, target: target}
+  - {name: HeartAndSoul, csv: ../data/preprocessingData/heartAndSoul/heartAndSoul.csv, target: PHQ}
+  - {name: HeartDisease, csv: ../data/heart_disease_processed.csv, target: num}
+  - {name: HillValley, csv: ../data/datasets/hill_valley/processed.csv, target: target}
+  - {name: ISOLET, csv: ../data/datasets/isolet/processed.csv, target: target}
+  - {name: Ionosphere, csv: ../data/datasets/ionosphere/processed.csv, target: target}
+  - {name: LSVTVoice, csv: ../data/datasets/lsvt_voice/processed.csv, target: target}
+  - {name: LeukemiaALLAML, csv: ../data/datasets/leukemia_allaml/processed.csv, target: target}
+  - {name: Libras, csv: ../data/datasets/libras/processed.csv, target: target}
+  - {name: LungCancer, csv: ../data/lung_cancer_processed.csv, target: Target}
+  - {name: LungDiscrete, csv: ../data/datasets/lung_discrete/processed.csv, target: target}
+  - {name: LungGene, csv: ../data/datasets/lung_gene/processed.csv, target: target}
+  - {name: Lymphoma, csv: ../data/datasets/lymphoma/processed.csv, target: target}
+  - {name: MADELON, csv: ../data/datasets/MADELON/processed.csv, target: target}
+  - {name: MfeatFactors, csv: ../data/datasets/mfeat_factors/processed.csv, target: target}
+  - {name: MicroMass, csv: ../data/datasets/micro_mass/processed.csv, target: target}
+  - {name: MousePCA440, csv: ../data/preprocessingData/mouseHeptoblast/processed/GSE90047_pca_440.csv, target: is_hepatoblast}
+  - {name: Musk2, csv: ../data/datasets/musk2/processed.csv, target: target}
+  - {name: Myocardial, csv: ../data/myocardial_infarction_processed.csv, target: LET_IS}
+  - {name: ORL10P, csv: ../data/datasets/orl10p/processed.csv, target: target}
+  - {name: Obesity, csv: ../data/obesity_levels_processed.csv, target: NObesity_encoded}
+  - {name: Optdigits, csv: ../data/datasets/optdigits/processed.csv, target: target}
+  - {name: Ozone, csv: ../data/datasets/ozone/processed.csv, target: target}
+  - {name: PIX10P, csv: ../data/datasets/pix10p/processed.csv, target: target}
+  - {name: ProstateGE, csv: ../data/datasets/prostate_ge/processed.csv, target: target}
+  - {name: QSARBiodeg, csv: ../data/datasets/qsar_biodeg/processed.csv, target: target}
+  - {name: SMKCAN187, csv: ../data/datasets/smk_can/processed.csv, target: target}
+  - {name: Semeion, csv: ../data/datasets/semeion/processed.csv, target: target}
+  - {name: Sonar, csv: ../data/datasets/sonar/processed.csv, target: target}
+  - {name: Spambase, csv: ../data/datasets/spambase/processed.csv, target: target}
+  - {name: SteelPlates, csv: ../data/datasets/steel_plates/processed.csv, target: target}
+  - {name: TOX171, csv: ../data/datasets/tox_171/processed.csv, target: target}
+  - {name: Texture, csv: ../data/datasets/texture/processed.csv, target: target}
+  - {name: WarpAR10P, csv: ../data/datasets/warpar10p/processed.csv, target: target}
+  - {name: WarpPIE10P, csv: ../data/datasets/warppie10p/processed.csv, target: target}
+  - {name: Yale, csv: ../data/datasets/yale/processed.csv, target: target}
