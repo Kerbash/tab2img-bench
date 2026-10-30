@@ -203,7 +203,3 @@ results/        paper_51/  (bundled study results)
 examples/       quickstart.py
 tests/          pytest suite (CPU, < 1 min)
 ```
-
-## Citation
-
-TODO: add the paper reference once published.
